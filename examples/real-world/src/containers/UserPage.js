@@ -45,7 +45,20 @@ class UserPage extends Component {
     )
   }
 
+  state = { wat: false }
+
+  unstable_handleError() {
+    this.setState({
+      wat: true
+    });
+  }
+
+
   render() {
+    if (this.state.wat) {
+      return [<p>Oh no</p>, <button onClick={() => this.setState({ wat: false })}>Retry</button>]
+    }
+
     const { user, login } = this.props
     if (!user) {
       return <h1><i>Loading {login}{"'s profile..."}</i></h1>

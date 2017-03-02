@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 
 const User = ({ user }) => {
   const { login, avatarUrl, name } = user
-
+  throw new Error('oops')
   return (
     <div className="User">
       <Link to={`/${login}`}>
